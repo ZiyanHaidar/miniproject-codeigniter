@@ -25,14 +25,18 @@
             </center>
             <h5 class="card-header mx-auto">Sistem Informasi Sekolah</h5>
             <div class="card-body">
-                <form action="auth" method="post">
+                <form action="<?php echo base_url(); ?>auth/aksi_login" method="post" class="space-y-12">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="email" class="block mb-2 text-sm">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Input your email"
+                            aria-describedby="emailHelp">
 
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        <div class="flex justify-between mb-2">
+                            <label for="password" class="text-sm">Password</label>
+                            <input type="password" class="form-control" name="password" id="password"
+                                placeholder="Input your password" autocomplete="off">
+                            <a rel="noopener noreferrer" href="#"
+                                class="text-xs hover:underline dark:text-gray-400">Lupa Password?</a>
                         </div>
 
                         <div class="d-grid gap-2 col-6 mx-auto">
