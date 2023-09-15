@@ -33,7 +33,7 @@
         border-radius: 2px;
         padding: 10px;
         margin: 5px;
-        width: 150px;
+        width: 200px;
         display: inline-block;
         color: white;
         margin-left: 0;
@@ -158,7 +158,7 @@
     <div class="sidenav" id="mySidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; tutup</a>
         <a href="<?php echo base_url('admin') ?>">Beranda</a>
-        <a href="<?php echo base_url('siswa') ?>">Siswa</a>
+        <a href="<?php echo base_url('admin/siswa') ?>">Siswa</a>
     </div>
 
     <!-- Konten -->
