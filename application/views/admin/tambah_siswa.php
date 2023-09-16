@@ -80,7 +80,8 @@
 
     /* CSS Untuk Konten */
     .content {
-
+        margin-left: 0;
+        padding: 40px;
         transition: margin-left 0.5s;
     }
 

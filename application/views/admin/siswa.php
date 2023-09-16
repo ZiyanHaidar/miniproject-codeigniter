@@ -14,7 +14,7 @@
         border-radius: 2px;
         padding: 10px;
         margin: 5px;
-        width: 150px;
+        width: 200px;
         display: inline-block;
         color: white;
         margin-left: 0;
@@ -186,7 +186,8 @@
 
                         </td>
                         <td class="text-center">
-                            <a href="(<?php echo $row->id_siswa ?>)" class="btn btn-primary btn-sm">Update</a>
+                            <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>"
+                                class="btn btn-primary btn-sm">Ubah</a>
                             <button onclick="hapus(<?php echo $row->id_siswa ?>)"
                                 class="btn btn-danger btn-sm">Hapus</button>
                         </td>

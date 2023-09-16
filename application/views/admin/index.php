@@ -166,7 +166,7 @@
 
         <div class="card">
             <p>Jumlah Kelas</p>
-            <h1>6</h1>
+            <h1>6 </h1>
             <a href="" target="_blank" class="login-button">Info untuk lebih lanjut</a>
         </div>
         <div class="card">
