@@ -1,45 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-    .card {
-        background-color: #20B2AA;
-        border: 1px solid #ccc;
-        border-radius: 2px;
-        padding: 10px;
-        margin: 5px;
-        width: 200px;
-        display: inline-block;
-        color: white;
-        margin-left: 0;
-        transition: margin-left 0.5s;
-    }
-
-
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-    }
-
-    .login-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #008B8B;
-        color: #fff;
-
-        text-decoration: none;
-        text-align: center;
-        font-size: 10px;
-        border: none;
-
-        width: 100px;
     }
 
     .navbar {
@@ -127,6 +101,14 @@
         /* Membuat ruang antara navbar dan tabel */
         padding: 20px;
     }
+
+    ul {
+        list-style-type: none;
+    }
+
+    body {
+        background-color: white;
+    }
     </style>
 </head>
 
@@ -143,10 +125,30 @@
 
     <!-- Side Navbar (Samping) -->
     <div class="sidenav" id="mySidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; tutup</a>
-        <a href="<?php echo base_url('admin') ?>">Beranda</a>
-        <a href="<?php echo base_url('admin/siswa') ?>">Siswa</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+
+        <li>
+            <a href="<?php echo base_url('admin') ?>" <span class="ml-3">Dashboard</span>
+            </a>
+
+        </li>
+        <li>
+            <a href="<?php echo base_url('admin/siswa') ?>" <span class="flex-1 ml-3 whitespace-nowrap">Daftar
+                Siswa</span>
+
+
+            </a>
+        </li>
+        <li>
+
+            <a href="<?php echo base_url('login/logout'); ?>" <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
+            </a>
+        </li>
+        </ul>
     </div>
+
+
+
 
     <!-- Konten -->
     <!-- Tabel -->
@@ -161,6 +163,7 @@
                         <th>NISN</th>
                         <th>Gender</th>
                         <th>Kelas</th>
+                        <th>Jurusan</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -185,6 +188,10 @@
                             <?php echo tampil_full_kelas_byid($row->id_kelas) ?>
 
                         </td>
+                        <td>
+                            <?php echo tampil_full_kelas_by($row->id_kelas) ?>
+
+                        </td>
                         <td class="text-center">
                             <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>"
                                 class="btn btn-primary btn-sm">Ubah</a>
@@ -204,6 +211,7 @@
                 var yes = confirm('Yakin Di Hapus?');
                 if (yes == true) {
                     window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
+
                 }
             }
             </script>

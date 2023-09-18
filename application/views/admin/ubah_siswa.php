@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
     .card {
         background-color: #20B2AA;
@@ -81,7 +82,7 @@
     /* CSS Untuk Konten */
     .content {
         margin-left: 0;
-        padding: 100px;
+        padding: 30px;
         transition: margin-left 0.5s;
     }
 
@@ -117,22 +118,34 @@
         border-radius: 5px;
     }
 
+    .login-button {
+        display: inline-block;
+        padding: 5px;
+        background-color: blue;
+        color: #fff;
+        text-decoration: none;
+
+        font-size: 15px;
+        border: none;
+
+    }
+
     .navbar h1 {
         margin: 0;
     }
 
-    .table-container {
-        margin-top: 80px;
+    .container {
+        margin-top: 60px;
         /* Membuat ruang antara navbar dan tabel */
         padding: 20px;
     }
     </style>
 </head>
 
-<body>
+<body class="min-vh-100 d-flex">
     <div class="navbar">
         <span class="openbtn" onclick="openNav()">&#9776;</span>
-        <h3 class="text-center text-white">Data Siswa</h3>
+        <h3 class="text-center text-white">Ubah Data Siswa</h3>
         <div class="search-container">
             <input type="text" class="search-box" placeholder="Cari...">
             <button type="submit">Cari</button>
@@ -146,72 +159,75 @@
         <a href="<?php echo base_url('admin/siswa') ?>">Siswa</a>
     </div>
     <div class="content">
-        <div class="d-flex">
 
-            <div class="container">
+        <div class="container mt-6">
 
-                <div class="overflow-x-auto">
-                    <h3 class="text-center ">Ubah Data Siswa</h3>
-                    <?php foreach($siswa as $data_siswa): ?>
-                    <form action="<?php echo base_url('admin/aksi_ubah_siswa') ?>" enctype="multipart/form-data"
-                        method="post">
-                        <input type="hidden" name="id_siswa" value="<?php echo $data_siswa->id_siswa ?>">
-                        <div class="mb-3 col-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
-                                Nama Siswa
-                            </label>
-                            <input
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="nama" name="nama" type="text" placeholder="Nama"
-                                value="<?php echo $data_siswa->nama_siswa ?>">
-                        </div>
-                        <div class="mb-3 col-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="nisn">
-                                NISN
-                            </label>
-                            <input
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="nisn" name="nisn" type="number" placeholder="Nisn"
-                                value="<?php echo $data_siswa->nisn ?>">
-                        </div>
-                        <div class="mb-3 col-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
-                                Gender
-                            </label>
-                            <select name="gender" id="gender"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <option selected value="<?php echo $data_siswa->gender ?>">
-                                    <?php echo $data_siswa->gender ?></option>
-                                <option value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 col-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="kelas">
-                                Kelas
-                            </label>
-                            <select name="kelas" id="kelas"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <option selected value="<?php echo $data_siswa->id_kelas ?>">Pilih Kelas</option>
-                                <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>
-                                </option>
-                                <?php foreach($kelas as $row): ?>
-                                <option value="<?php echo $row->id ?>">
-                                    <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?>
-                                </option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-                        <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
-                            Ubah
-                        </button>
-                    </form>
+            <div class="overflow-x-auto">
 
-                </div>
+                <?php foreach($siswa as $data_siswa): ?>
+                <form action="<?php echo base_url('admin/aksi_ubah_siswa') ?>" class="row" method="post">
+                    <input type="hidden" name="id_siswa" value="<?php echo $data_siswa->id_siswa ?>">
+                    <div class="mb-3 col-6">
+                        <label for="nama" class="form-label">Nama Siswa</label>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                            value="<?php echo $data_siswa->nama_siswa ?>">
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label for="nisn" class="form-label">NISN</label>
+                        <input type="text" class="form-control" id="nisn" name="nisn" placeholder="Nisn"
+                            value="<?php echo $data_siswa->nisn ?>">
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
+                            Gender
+                        </label>
+                        <select name="gender" id="gender"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option selected value="<?php echo $data_siswa->gender ?>">
+                                <?php echo $data_siswa->gender ?></option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="kelas">
+                            Kelas
+                        </label>
+                        <select name="kelas" id="kelas"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option selected value="<?php echo $data_siswa->id_kelas ?>">Pilih Kelas</option>
+                            <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>
+                            </option>
+                            <?php foreach($kelas as $row): ?>
+                            <option value="<?php echo $row->id ?>">
+                                <?php echo $row->tingkat_kelas?>
+                            </option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="kelas">
+                            Jurusan
+                        </label>
+                        <select name="kelas" id="kelas"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option selected value="<?php echo $data_siswa->id_kelas ?>">Pilih jurusan</option>
+                            <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>
+                            </option>
+                            <?php foreach($kelas as $row): ?>
+                            <option value="<?php echo $row->id ?>">
+                                <?php echo$row->jurusan_kelas ?>
+                            </option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                </form>
+
             </div>
-
         </div>
+
+    </div>
     </div>
 
     <?php endforeach ?>

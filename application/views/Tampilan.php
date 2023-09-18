@@ -67,21 +67,22 @@
         background-color: #FFD700;
     }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 
 <body class="background">
-    <h3 class="ddd">ASIS</h3>
+
     <div class="container">
         <div class="centered">
-            <h1>Sistem Informasi Sekolah</h1>
+            <h1>Selamat Datang di</h1>
+            <h3>SMK Bina Nusantara Mranggen</h3>
             <center>
                 <img src="https://binusasmg.sch.id/ppdb/logobinusa.png" width="300px" height="250px">
             </center>
             <br>
-            <h3>SMK Bina Nusantara Semarang</h3>
-            <a href="" target="_blank" class="login-button">PERPUSTAKAAN</a>
+
+            <a href="./auth/register" target="_blank" class="login-button">Register</a>
             </a>
             <a href="./auth" target="_blank" class="login-butto">LOGIN</a>
         </div>
