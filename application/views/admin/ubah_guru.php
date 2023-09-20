@@ -157,22 +157,9 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
 
         <li>
-            <a href="<?php echo base_url('admin') ?>" <span class="ml-3">Dashboard</span>
+            <a href="<?php echo base_url('admin/guru') ?>" <span class="ml-3">Back</span>
             </a>
-        </li>
-        <li>
-            <a href="<?php echo base_url('admin/siswa') ?>" <span class="flex-1 ml-3 whitespace-nowrap">Daftar
-                Siswa</span>
-            </a>
-        </li>
-        <li>
-            <a href="<?php echo base_url('admin/guru') ?>" <span class="flex-1 ml-3 whitespace-nowrap">Daftar
-                Guru</span>
-            </a>
-        </li>
-        <li>
-            <a href="<?php echo base_url('login/logout'); ?>" <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
-            </a>
+
         </li>
         </ul>
     </div>

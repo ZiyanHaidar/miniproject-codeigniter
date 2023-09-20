@@ -110,6 +110,8 @@
         background-color: white;
     }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -140,8 +142,10 @@
             </a>
         </li>
         <li>
-            <a href="<?php echo base_url('login/logout'); ?>" <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
+            <a onclick="confirmLogout()">
+                <i class="fas fa-sign-out-alt fa-2x text-danger">LogOut</i>
             </a>
+
         </li>
         </ul>
     </div>
@@ -200,7 +204,7 @@
             <script>
             function hapus(id) {
                 Swal.fire({
-                    title: 'Yakin DI Hapus?',
+                    title: 'Apakah Kamu Ingin Menghapusnya?',
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -240,7 +244,26 @@
     }
     </script>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <!-- LOGOUT -->
+    <script>
+    function confirmLogout() {
+        Swal.fire({
+            title: 'Yakin mau LogOut?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "<?php echo base_url('auth/logout') ?>";
+            }
+        });
+    }
+    </script>
 </body>
 
 </html>
