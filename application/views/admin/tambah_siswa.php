@@ -127,10 +127,35 @@
 
     <!-- Side Navbar (Samping) -->
     <div class="sidenav" id="mySidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; tutup</a>
-        <a href="<?php echo base_url('admin') ?>">Beranda</a>
-        <a href="<?php echo base_url('admin/siswa') ?>">Siswa</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+
+        <li>
+            <a href="<?php echo base_url('admin') ?>" <span class="ml-3">Dashboard</span>
+            </a>
+
+        </li>
+        <li>
+            <a href="<?php echo base_url('admin/siswa') ?>" <span class="flex-1 ml-3 whitespace-nowrap">Daftar
+                Siswa</span>
+
+
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo base_url('admin/guru') ?>" <span class="flex-1 ml-3 whitespace-nowrap">Daftar
+                Guru</span>
+
+
+            </a>
+        </li>
+        <li>
+
+            <a href="<?php echo base_url('login/logout'); ?>" <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
+            </a>
+        </li>
+        </ul>
     </div>
+
     <div class="content">
         <div class="container mt-6">
 
@@ -159,7 +184,6 @@
                     </div>
 
                     <div class="mb-3 col-6">
-
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="kelas">
                             Kelas
                         </label>
@@ -168,21 +192,7 @@
                             <option selected>Pilih Kelas</option>
                             <?php foreach($kelas as $row): ?>
                             <option value="<?php echo $row->id ?>">
-                                <?php echo $row->tingkat_kelas ?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-                    <div class="mb-3 col-6">
-
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="kelas">
-                            Jurusan
-                        </label>
-                        <select name="kelas" id="kelas"
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option selected>Pilih Jurusan</option>
-                            <?php foreach($kelas as $row): ?>
-                            <option value="<?php echo $row->id ?>">
-                                <?php echo $row->jurusan_kelas ?></option>
+                                <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?></option>
                             <?php endforeach ?>
                         </select>
                     </div>

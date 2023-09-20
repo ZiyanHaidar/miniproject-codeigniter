@@ -56,7 +56,7 @@
         font-size: 10px;
         border: none;
         cursor: pointer;
-        width: 120px;
+        width: 100px;
     }
 
     .login-button:hover {
@@ -84,7 +84,7 @@
 
             <a href="./auth/register" target="_blank" class="login-button">Register</a>
             </a>
-            <a href="./auth" target="_blank" class="login-butto">LOGIN</a>
+            <a href="./auth" target="_blank" class="login-butto">Login</a>
         </div>
     </div>
 

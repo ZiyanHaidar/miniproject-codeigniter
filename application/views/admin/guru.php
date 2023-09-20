@@ -116,50 +116,36 @@
 
     <div class="navbar">
         <span class="openbtn" onclick="openNav()">&#9776;</span>
-        <h3 class="text-center text-white">Data Siswa</h3>
+        <h3 class="text-center text-white">Data Guru</h3>
         <div class="search-container">
             <input type="text" class="search-box" placeholder="Cari...">
             <button type="submit">Cari</button>
         </div>
     </div>
 
-    <!-- Side Navbar (Samping) -->
     <div class="sidenav" id="mySidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
-
         <li>
             <a href="<?php echo base_url('admin') ?>" <span class="ml-3">Dashboard</span>
             </a>
-
         </li>
         <li>
             <a href="<?php echo base_url('admin/siswa') ?>" <span class="flex-1 ml-3 whitespace-nowrap">Daftar
                 Siswa</span>
-
-
             </a>
         </li>
         <li>
             <a href="<?php echo base_url('admin/guru') ?>" <span class="flex-1 ml-3 whitespace-nowrap">Daftar
                 Guru</span>
-
-
             </a>
         </li>
         <li>
-
             <a href="<?php echo base_url('login/logout'); ?>" <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
             </a>
         </li>
         </ul>
     </div>
 
-
-
-
-
-    <!-- Konten -->
-    <!-- Tabel -->
     <div class="content">
         <div class="container table-container">
             <table class="table table-striped">
@@ -167,24 +153,23 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Nama Guru</th>
                         <th>NISN</th>
                         <th>Gender</th>
-                        <th>Kelas dan Jurusan</th>
-
+                        <th>Mapel</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 0;
-                                foreach ($siswa as $row):
+                                foreach ($guru as $row):
                                     $no++ ?>
                     <tr>
                         <td>
                             <?php echo $no ?>
                         </td>
                         <td>
-                            <?php echo $row->nama_siswa ?>
+                            <?php echo $row->nama_guru ?>
                         </td>
                         <td>
                             <?php echo $row->nisn ?>
@@ -193,14 +178,14 @@
                             <?php echo $row->gender ?>
                         </td>
                         <td>
-                            <?php echo tampil_full_kelas_byid($row->id_kelas) ?>
+                            <?php echo tampil_full_mapel_byid($row->id_mapel) ?>
 
                         </td>
 
                         <td class="text-center">
-                            <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>"
+                            <a href="<?php echo base_url('admin/ubah_guru/').$row->id_guru?>"
                                 class="btn btn-primary btn-sm">Ubah</a>
-                            <button onclick="hapus(<?php echo $row->id_siswa ?>)"
+                            <button onclick="hapus(<?php echo $row->id_guru ?>)"
                                 class="btn btn-danger btn-sm">Hapus</button>
                         </td>
 
@@ -209,7 +194,7 @@
                 </tbody>
             </table>
             </table>
-            <button class="btn btn-sm btn-warning"><a href="Tambah_siswa" class="btn text-primary">Tambah</a>
+            <button class="btn btn-sm btn-warning"><a href="Tambah_guru" class="btn text-primary">Tambah</a>
             </button>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
             <script>
@@ -223,7 +208,7 @@
                     confirmButtonText: 'Ya, Hapus!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id;
+                        window.location.href = "<?php echo base_url('admin/hapus_guru/') ?>" + id;
                     }
                 });
             }
