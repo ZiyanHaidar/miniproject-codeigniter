@@ -40,41 +40,51 @@ class Auth extends CI_Controller {
         }  
     }
 
-    public function register() {
-        $this->load->view('auth/register');
-    }
-
-	public function aksi_register() {
-        $email    = $this->input->post('email', true);
-        $username = $this->input->post('username', true);
-        $password = md5($this->input->post('password', true));
-
-        $data = [
-            'email'    => $email,
-            'username' => $username,
-            'password' => $password,
-            'role'     => 'admin',
-        ];
-
-        $table = 'admin';
-
-        $this->db->insert($table, $data);
-
-        if ($this->db->affected_rows() > 0) {
-            // Registrasi berhasil
-            $this->session->set_userdata([
-                'logged_in' => TRUE,
-                'email' => $email,
-                'username' => $username,
-                'role' => 'admin'
-            ]);
-
-            redirect(base_url() . "admin");
-        } else {
-            // Registrasi gagal
+    public function register() { 
+        $this->load->view('auth/register'); 
+      } 
+      
+      public function aksi_register() { 
+        $email    = $this->input->post('email', true); 
+        $username = $this->input->post('username', true); 
+        $password = $this->input->post('password', true);
+      
+        // Check if the password length is at least 8 characters
+        if (strlen($password) < 8) {
+            // Password is too short, redirect back to registration
             redirect(base_url() . "auth/register");
         }
-    }
+      
+        // Hash the password
+        $hashed_password = md5($password);
+      
+        $data = [ 
+            'email'    => $email, 
+            'username' => $username, 
+            'password' => $hashed_password, 
+            'role'     => 'admin', 
+        ]; 
+      
+        $table = 'admin'; 
+      
+        $this->db->insert($table, $data); 
+      
+        if ($this->db->affected_rows() > 0) { 
+            // Registration successful 
+            $this->session->set_userdata([ 
+                'logged_in' => TRUE, 
+                'email' => $email, 
+                'username' => $username, 
+                'role' => 'admin' 
+            ]); 
+      
+            redirect(base_url() . "admin"); 
+        } else { 
+            // Registration failed 
+            redirect(base_url() . "auth/register"); 
+        } 
+      }
+      
 
     function logout() {
         $this->session->sess_destroy();
