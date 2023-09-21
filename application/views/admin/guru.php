@@ -128,7 +128,8 @@
     <div class="sidenav" id="mySidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
         <li>
-            <a href="<?php echo base_url('admin') ?>" <span class="ml-3">Dashboard</span>
+            <a href="<?php echo base_url('admin') ?>" <span class="ml-3"><i
+                    class="fa-thin fa-gauge">Dashboard</i></span>
             </a>
         </li>
         <li>
@@ -187,10 +188,13 @@
                         </td>
 
                         <td class="text-center">
-                            <a href="<?php echo base_url('admin/ubah_guru/').$row->id_guru?>"
-                                class="btn btn-primary btn-sm">Ubah</a>
-                            <button onclick="hapus(<?php echo $row->id_guru ?>)"
-                                class="btn btn-danger btn-sm">Hapus</button>
+                            <a href="<?php echo base_url('admin/ubah_guru/') . $row->id_guru ?>"
+                                class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <button onClick="hapus(<?php echo $row->id_guru; ?>)" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Hapus
+                            </button>
                         </td>
 
                     </tr>
@@ -198,7 +202,9 @@
                 </tbody>
             </table>
             </table>
-            <button class="btn btn-sm btn-warning"><a href="Tambah_guru" class="btn text-primary">Tambah</a>
+            <a href="<?php echo base_url('admin/Tambah_guru') ?>" class="btn btn-success m-2">
+                <i class="fas fa-plus"></i> Tambah
+            </a>
             </button>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
             <script>

@@ -173,25 +173,25 @@
             <p>Jumlah Kelas</p>
             <h2><?php echo $kelas ?>
             </h2>
-            <a href="" target="_blank" class="login-button">Lihat Detail</a>
+            <a href="./admin/detail_kelas" class="login-button">Lihat Detail</a>
         </div>
         <div class="card">
             <p>Jumlah Mapel</p>
             <h2><?php echo $mapel ?>
             </h2>
-            <a href="" target="_blank" class="login-button">Lihat Detail</a>
+            <a href="./admin/detail_mapel" class="login-button">Lihat Detail</a>
         </div>
         <div class="card">
             <p>Jumlah Siswa</p>
             <h2><?php echo $siswa ?>
             </h2>
-            <a href="" target="_blank" class="login-button">Lihat Detail</a>
+            <a href="" class="login-button">Lihat Detail</a>
         </div>
         <div class="card">
             <p>Jumlah guru</p>
             <h2><?php echo $guru?>
             </h2>
-            <a href="" target="_blank" class="login-button">Lihat Detail</a>
+            <a href="" class="login-button">Lihat Detail</a>
         </div>
 
     </div>

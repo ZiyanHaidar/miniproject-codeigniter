@@ -17,7 +17,6 @@
     }
 
 
-
     .full-bg {
         background-image: url(https://smkbinusademak.sch.id/wp-content/uploads/2023/03/20230222_161021-scaled.jpg);
         background-position: center center;

@@ -20,7 +20,26 @@ if ($this->session->userdata('logged_in')!=true) {
     $data['kelas'] = $this->m_model->get_data('kelas')->num_rows();
     $this->load->view('admin/index', $data);
   }
-
+  public function detail_siswa()
+	{
+		$data['siswa'] = $this->m_model->get_siswa('siswa');
+		$this->load->view('admin/detail_siswa', $data);
+	}
+	public function detail_kelas()
+	{
+		$data['kelas'] = $this->m_model->get_data('kelas')->result();
+		$this->load->view('admin/detail_kelas', $data);
+	}
+	public function detail_guru()
+	{
+		$data['guru'] = $this->m_model->get_data('guru')->result();
+		$this->load->view('admin/detail_guru', $data);
+	}
+	public function detail_mapel()
+	{
+		$data['mapel'] = $this->m_model->get_data('mapel')->result();
+		$this->load->view('admin/detail_mapel', $data);
+	}
  public function siswa()
  {
     $data['siswa'] = $this->m_model->get_data('siswa')->result();

@@ -195,10 +195,13 @@
                         </td>
 
                         <td class="text-center">
-                            <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>"
-                                class="btn btn-primary btn-sm">Ubah</a>
-                            <button onclick="hapus(<?php echo $row->id_siswa ?>)"
-                                class="btn btn-danger btn-sm">Hapus</button>
+                            <a href="<?php echo base_url('admin/ubah_siswa/') . $row->id_siswa ?>"
+                                class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <button onclick="hapus(<?php echo $row->id_siswa ?>)" class="btn btn-danger btn-sm"><i
+                                    class="fas fa-trash"></i> Hapus
+                            </button>
                         </td>
 
                     </tr>
@@ -206,7 +209,9 @@
                 </tbody>
             </table>
             </table>
-            <button class="btn btn-sm btn-warning"><a href="Tambah_siswa" class="btn text-primary">Tambah</a>
+            <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-success m-2">
+                <i class="fas fa-plus"></i> Tambah
+            </a>
             </button>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
             <script>
