@@ -78,7 +78,7 @@ class Auth extends CI_Controller {
                 'role' => 'admin' 
             ]); 
       
-            redirect(base_url() . "admin"); 
+            redirect(base_url() . "auth"); 
         } else { 
             // Registration failed 
             redirect(base_url() . "auth/register"); 
@@ -88,6 +88,6 @@ class Auth extends CI_Controller {
 
     function logout() {
         $this->session->sess_destroy();
-        redirect(base_url('auth'));
+        redirect(base_url('/'));
     }
 }

@@ -22,7 +22,7 @@ if ($this->session->userdata('logged_in')!=true) {
   }
   public function detail_siswa()
 	{
-		$data['siswa'] = $this->m_model->get_siswa('siswa');
+		$data['siswa'] = $this->m_model->get_data('siswa')->result();
 		$this->load->view('admin/detail_siswa', $data);
 	}
 	public function detail_kelas()

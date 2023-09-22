@@ -142,13 +142,8 @@
                 Guru</span>
             </a>
         </li>
-        <li>
-            <a onclick="confirmLogout()">
-                <i class="fas fa-sign-out-alt fa-2x text-danger">LogOut</i>
-            </a>
 
-        </li>
-        </ul>
+
     </div>
 
     <div class="content">

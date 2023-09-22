@@ -90,7 +90,7 @@
         <a href="<?php echo base_url('admin') ?>" class="btn btn-success m-2">
             Back
         </a>
-        <h3 class="text-center text-white">Detail Mapel</h3>
+        <h3 class="text-center text-white">Detail Guru</h3>
         <div class="search-container">
             <input type="text" class="search-box" placeholder="Cari...">
             <button type="submit">Cari</button>
@@ -98,29 +98,34 @@
     </div>
 
     <div class="content">
-        <div class="container mt-6">
-            <div class="container table-container">
-                <table class="table table-striped">
+        <div class="container table-container">
+            <table class="table table-striped">
 
-                    <thead>
-                        <tr>
-                            <th class="text-center"><b>No</b></th>
-                            <th class="text-center"><b>Mapel</b></th>
-                            <th class="text-center"><b>Guru Pengajar</b></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 1; foreach ($mapel as $u) { ?>
-                        <tr>
-                            <td class="text-center"><b><?php echo $no++ ?></b></td>
-                            <td class="text-center"><b><?php echo $u->nama_mapel ?></b></td>
-                            <td class="text-center"><b><?php echo $u->nama_guru ?></b></td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
+
+                <thead>
+                    <tr>
+                        <th class="text-center"><b>No</b></th>
+                        <th class="text-center"><b>Nama</b></th>
+                        <th class="text-center"><b>NISN</b></th>
+                        <th class="text-center"><b>Gender</b></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no = 1; foreach ($guru as $u) { ?>
+                    <tr>
+                        <td class="text-center"><b><?php echo $no++ ?></b></td>
+                        <td class="text-center"><b><?php echo $u->nama_guru ?></b></td>
+                        <td class="text-center"><b><?php echo $u->nisn ?></b></td>
+                        <td class="text-center"><b><?php echo $u->gender ?></b></td>
+
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+
         </div>
+    </div>
     </div>
 
 </body>

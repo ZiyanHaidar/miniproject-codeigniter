@@ -100,9 +100,9 @@
     <!-- Side Navbar (Samping) -->
 
     <div class="content">
-        <div class="container mt-6">
+        <div class="container table-container">
+            <table class="table table-striped">
 
-            <table class="table">
                 <thead>
                     <tr>
                         <th class="text-center"><b>No</b></th>
@@ -121,6 +121,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 
 

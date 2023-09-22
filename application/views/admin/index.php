@@ -30,14 +30,14 @@
 
     .login-button {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 10px;
         background-color: gray;
         color: #fff;
         text-decoration: none;
         text-align: center;
-        font-size: 15px;
+        font-size: 13px;
         border: none;
-        width: 100px;
+        width: 180px;
     }
 
 
@@ -185,13 +185,13 @@
             <p>Jumlah Siswa</p>
             <h2><?php echo $siswa ?>
             </h2>
-            <a href="" class="login-button">Lihat Detail</a>
+            <a href="./admin/detail_siswa" class="login-button">Lihat Detail</a>
         </div>
         <div class="card">
             <p>Jumlah guru</p>
             <h2><?php echo $guru?>
             </h2>
-            <a href="" class="login-button">Lihat Detail</a>
+            <a href="./admin/detail_guru" class="login-button">Lihat Detail</a>
         </div>
 
     </div>
