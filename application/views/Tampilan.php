@@ -82,9 +82,9 @@
             </center>
             <br>
 
-            <a href="./auth/register" target="_blank" class="login-button">Register</a>
+            <a href="./auth/register" class="login-button">Register</a>
             </a>
-            <a href="./auth" target="_blank" class="login-butto">Login</a>
+            <a href="./auth" class="login-butto">Login</a>
         </div>
     </div>
 
