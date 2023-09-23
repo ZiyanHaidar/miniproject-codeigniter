@@ -18,7 +18,7 @@
 
 
     .full-bg {
-        background-image: url(https://smkbinusademak.sch.id/wp-content/uploads/2023/03/20230222_161021-scaled.jpg);
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/700/96/937/space-stars-lights-star-wallpaper-preview.jpg);
         background-position: center center;
         background-size: cover;
         position: fixed;
@@ -128,9 +128,7 @@
                     <input type="text" id="email" placeholder="Enter your email" name="email">
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Enter your password" name="password">
-                    <a rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-400"
-                        style="color:red"><strong>Lupa Password?</strong></a>
-
+                    <br>
                     <button type="submit">Login</button>
                 </form>
                 <p style="text-align: center; margin-top: 10px;">

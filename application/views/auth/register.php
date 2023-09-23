@@ -19,7 +19,7 @@
 
 
     .full-bg {
-        background-image: url(https://smkbinusa-ungaran.sch.id/po-content/uploads/guru.jpg);
+        background-image: url(https://1.bp.blogspot.com/-eQszix58K1k/XiP6lj0gvJI/AAAAAAAAFhc/5eJ6brLZUD4k_eXSnfXmaDVdZaCMAPLcACLcBGAsYHQ/s1600/starry%2Bnight-01.jpg);
         background-position: center center;
         background-size: cover;
         position: fixed;

@@ -128,8 +128,7 @@
     <div class="sidenav" id="mySidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
         <li>
-            <a href="<?php echo base_url('admin') ?>" <span class="ml-3"><i
-                    class="fa-thin fa-gauge">Dashboard</i></span>
+            <a href="<?php echo base_url('admin') ?>" <span class="ml-3">Dashboard</span>
             </a>
         </li>
         <li>
