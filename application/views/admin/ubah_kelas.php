@@ -88,7 +88,7 @@
             <div id="content" role="main">
                 <div class="card mb-4 shadow">
                     <div class="card-body d-flex justify-content-between align-items-center">
-                        <h1>Ubah Guru</h1>
+                        <h1>Ubah Kelas</h1>
 
                     </div>
                 </div>
@@ -96,50 +96,28 @@
                 <div class="card mb-4 shadow">
                     <div class="card-body">
 
-                        <?php foreach ($guru as $data_guru): ?>
-                        <form action="<?php echo base_url('admin/aksi_ubah_guru') ?>" enctype="multipart/form-data"
+                        <?php foreach ($kelas as $data_kelas): ?>
+                        <form action="<?php echo base_url('admin/aksi_ubah_kelas') ?>" enctype="multipart/form-data"
                             method="POST">
-                            <input name="id_guru" type="hidden" value="<?php echo $data_guru->id_guru ?>">
+                            <input name="id" type="hidden" value="<?php echo $data_kelas->id ?>">
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="nama">Nama Guru</label>
-                                        <input type="text" class="form-control" id="nama" name="nama"
-                                            placeholder="Nama Guru" value="<?php echo $data_guru->nama_guru ?>"
+                                        <label for="tingkat">Tingkat Kelas</label>
+                                        <input type="text" class="form-control" id="tingkat" name="tingkat"
+                                            placeholder="Tingkat Kelas" value="<?php echo $data_kelas->tingkat_kelas ?>"
                                             required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="nisn">NISN</label>
-                                        <input type="text" class="form-control" id="nisn" name="nisn"
-                                            placeholder="Masukkan NISN" value="<?php echo $data_guru->nisn ?>" required>
+                                        <label for="jurusan">Jurusan Kelas</label>
+                                        <input type="text" class="form-control" id="jurusan" name="jurusan"
+                                            placeholder="Jurusan Kelas" value="<?php echo $data_kelas->jurusan_kelas ?>"
+                                            required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="gender">Gender</label>
-                                        <select class="form-control" id="gender" name="gender" required>
-                                            <option selected value="<?php echo $data_guru->gender ?>">
-                                                <?php echo $data_guru->gender ?>
-                                            </option>
-                                            <option value="Laki-laki">Laki-laki</option>
-                                            <option value="Perempuan">Perempuan</option>
-                                        </select>
-                                    </div>
-                                    <label for="mapel">Mapel</label>
-                                    <select class="form-control" id="mapel" name="mapel" required>
-                                        <option selected value="<?php $data_guru->id_mapel ?>">
-                                            <?php echo tampil_full_mapel_byid($data_guru->id_mapel) ?>
-                                        </option>
-                                        <?php foreach ($mapel as $row): ?>
-                                        <option value="<?php echo $row->id ?>">
-                                            <?php echo $row->nama_mapel ?>
-                                        </option>
-                                        <?php endforeach ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
                         <?php endforeach ?>
                     </div>

@@ -10,7 +10,6 @@
     <style>
     body {
         display: flex;
-
         margin: 0;
         min-height: 100vh;
         background-color: #61677A;
@@ -90,7 +89,7 @@
             <div id="content" role="main">
                 <div class="card mb-4 shadow">
                     <div class="card-body d-flex justify-content-between align-items-center">
-                        <h1>Guru</h1>
+                        <h1>Mapel</h1>
 
                     </div>
                 </div>
@@ -98,8 +97,8 @@
                 <div class="card mb-4 shadow">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="card-title">Daftar Guru</h5>
-                            <a href="<?php echo base_url('admin/tambah_guru') ?>" class="btn btn-success m-2">
+                            <h5 class="card-title">Daftar Mapel</h5>
+                            <a href="<?php echo base_url('admin/tambah_mapel') ?>" class="btn btn-success m-2">
                                 <i class="fas fa-plus"></i> Tambah
                             </a>
                         </div>
@@ -108,41 +107,34 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Nama Mapel</th>
                                         <th>Nama Guru</th>
-                                        <th>NISN</th>
-                                        <th>Gender</th>
-                                        <th>Mapel</th>
+
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $no = 0;
-                                    foreach ($guru as $row):
+                                    foreach ($mapel as $row):
                                         $no++ ?>
                                     <tr>
                                         <td>
                                             <?php echo $no ?>
                                         </td>
                                         <td>
-                                            <?php echo $row->nama_guru?>
+                                            <?php echo $row->nama_mapel?>
                                         </td>
                                         <td>
-                                            <?php echo $row->nisn ?>
+                                            <?php echo $row->nama_guru ?>
                                         </td>
-                                        <td>
-                                            <?php echo $row->gender ?>
-                                        </td>
-                                        <td>
-                                            <?php echo tampil_full_mapel_byid($row->id_mapel) ?>
-                                        </td>
+
                                         <td class="text-center">
 
-                                            <a href="<?php echo base_url('admin/ubah_guru/') . $row->id_guru ?>"
+                                            <a href="<?php echo base_url('admin/ubah_mapel/') . $row->id?>"
                                                 class="btn btn-primary">
                                                 <i class="fas fa-edit"></i> Edit
                                             </a>
-                                            <button onClick="hapus(<?php echo $row->id_guru; ?>)"
-                                                class="btn btn-danger">
+                                            <button onClick="hapus(<?php echo $row->id; ?>)" class="btn btn-danger">
                                                 <i class="fas fa-trash"></i> Hapus
                                             </button>
                                         </td>
@@ -169,7 +161,7 @@
             confirmButtonText: 'Ya, Hapus!'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "<?php echo base_url('admin/hapus_guru/') ?>" + id;
+                window.location.href = "<?php echo base_url('admin/hapus_mapel/') ?>" + id;
             }
         });
     }

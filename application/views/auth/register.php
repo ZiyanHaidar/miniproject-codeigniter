@@ -19,7 +19,7 @@
 
 
     .full-bg {
-        background-image: url(https://1.bp.blogspot.com/-eQszix58K1k/XiP6lj0gvJI/AAAAAAAAFhc/5eJ6brLZUD4k_eXSnfXmaDVdZaCMAPLcACLcBGAsYHQ/s1600/starry%2Bnight-01.jpg);
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/700/96/937/space-stars-lights-star-wallpaper-preview.jpg);
         background-position: center center;
         background-size: cover;
         position: fixed;
@@ -133,6 +133,7 @@
 
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Enter your password" name="password">
+                    <h6 style="color:red" font-size="">Password Minimal 8!</h6>
 
                     <label for="role">Role</label>
                     <select id="role" name="role" required>

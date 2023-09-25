@@ -20,26 +20,7 @@ if ($this->session->userdata('logged_in')!=true) {
     $data['kelas'] = $this->m_model->get_data('kelas')->num_rows();
     $this->load->view('admin/index', $data);
   }
-  public function detail_siswa()
-	{
-		$data['siswa'] = $this->m_model->get_data('siswa')->result();
-		$this->load->view('admin/detail_siswa', $data);
-	}
-	public function detail_kelas()
-	{
-		$data['kelas'] = $this->m_model->get_data('kelas')->result();
-		$this->load->view('admin/detail_kelas', $data);
-	}
-	public function detail_guru()
-	{
-		$data['guru'] = $this->m_model->get_data('guru')->result();
-		$this->load->view('admin/detail_guru', $data);
-	}
-	public function detail_mapel()
-	{
-		$data['mapel'] = $this->m_model->get_data('mapel')->result();
-		$this->load->view('admin/detail_mapel', $data);
-	}
+ 
  public function siswa()
  {
     $data['siswa'] = $this->m_model->get_data('siswa')->result();
@@ -150,6 +131,112 @@ if ($this->session->userdata('logged_in')!=true) {
     else{
       $this->session->set_flashdata('error', 'gagal..');
       redirect(base_url('admin/ubah_guru/'.$this->input->post('id_guru')));
+    }
+  }
+ public function kelas()
+ {
+    $data['kelas'] = $this->m_model->get_data('kelas')->result();
+  $this->load->view('admin/kelas', $data);
+ }
+ public function hapus_kelas($id)
+{
+    $this->m_model->delete('kelas', 'id', $id);
+    $this->session->set_flashdata('success', 'Kelas berhasil dihapus!');
+    redirect(base_url('admin/kelas'));
+}
+
+ public function tambah_kelas()
+ {
+    $data['kelas'] = $this->m_model->get_data('kelas')->result();
+  $this->load->view('admin/Tambah_kelas', $data);
+ }
+ 
+ public function aksi_Tambah_kelas()
+ {
+    $data = [
+      'tingkat_kelas' => $this->input->post('tingkat'),
+      'jurusan_kelas' => $this->input->post('jurusan'),
+    ];
+    $this->m_model->tambah_data('kelas', $data);
+    redirect(base_url('admin/kelas'));
+ }
+
+ public function ubah_kelas($id){ 
+  $data['kelas']=$this->m_model->get_by_id('kelas', 'id', $id)->result(); 
+  
+  $this->load->view('admin/ubah_kelas', $data); 
+}
+
+ public function aksi_ubah_kelas()
+ {
+    $data = array (
+        'tingkat_kelas' => $this->input->post('tingkat'),
+        'jurusan_kelas' => $this->input->post('jurusan'),
+        
+    );
+    $eksekusi=$this->m_model->ubah_data
+    ('kelas', $data, array('id'=>$this->input->post('id')));
+    if($eksekusi)
+    {
+      $this->session->set_flashdata('sukses', 'berhasil');
+      redirect(base_url('admin/kelas'));
+    }
+    else{
+      $this->session->set_flashdata('error', 'gagal..');
+      redirect(base_url('admin/ubah_kelas/'.$this->input->post('id')));
+    }
+  }
+ public function mapel()
+ {
+    $data['mapel'] = $this->m_model->get_data('mapel')->result();
+  $this->load->view('admin/mapel', $data);
+ }
+ public function hapus_mapel($id)
+{
+    $this->m_model->delete('mapel', 'id', $id);
+    $this->session->set_flashdata('success', 'Mapel berhasil dihapus!');
+    redirect(base_url('admin/mapel'));
+}
+
+ public function tambah_mapel()
+ {
+    $data['mapel'] = $this->m_model->get_data('mapel')->result();
+  $this->load->view('admin/Tambah_mapel', $data);
+ }
+ 
+ public function aksi_Tambah_mapel()
+ {
+    $data = [
+        'nama_mapel' => $this->input->post('nama'),
+        'nama_guru' => $this->input->post('namaguru'),
+        
+    ];
+    $this->m_model->tambah_data('mapel', $data);
+    redirect(base_url('admin/mapel'));
+ }
+
+ public function ubah_mapel($id){ 
+  $data['mapel']=$this->m_model->get_by_id('mapel', 'id', $id)->result();  
+  $this->load->view('admin/ubah_mapel', $data); 
+}
+
+ public function aksi_ubah_mapel()
+ {
+    $data = array (
+        'nama_mapel' => $this->input->post('nama'),
+        'nama_guru' => $this->input->post('namaguru'),
+        
+    );
+    $eksekusi=$this->m_model->ubah_data
+    ('mapel', $data, array('id'=>$this->input->post('id')));
+    if($eksekusi)
+    {
+      $this->session->set_flashdata('sukses', 'berhasil');
+      redirect(base_url('admin/mapel'));
+    }
+    else{
+      $this->session->set_flashdata('error', 'gagal..');
+      redirect(base_url('admin/ubah_mapel/'.$this->input->post('id')));
     }
   }
 }
